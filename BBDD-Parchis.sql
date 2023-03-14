@@ -13,7 +13,7 @@ CREATE TABLE Jugador (
 
 CREATE TABLE Partidas (
 	ID_partida INT,
-	fecha_hora DATETIME,
+	fecha DATETIME,
 	duracion_partida TIME,
 	cantidad_jugadores INT,
 	ganador_partida VARCHAR(30),
@@ -38,8 +38,22 @@ CREATE TABLE Tablero (
 	final_azul INT,
 	final_rojo INT,
 	final_verde INT,
-	final_amarillo INT
+	final_amarillo INT,
+	casa_azul INT,
+	casa_rojo INT,
+	casa_verde INT,
+	casa_amarillo INT,
+	casillas_seguras INT 
 )ENGINE=InnoDB;
+
+CREATE TABLE Actualizacion_Tablero (
+	ID_partida INT,
+	posicion_azul INT,
+	posicion_rojo INT,
+	posicion_verde INT,
+	posicion_amarillo INT
+)ENGINE=InnoDB;
+
 
 INSERT INTO Jugador VALUES ('Anna', '1762hg', 198, 1, 3);
 INSERT INTO Jugador VALUES ('Sara', 'IOS198', 200, 1, 2);
@@ -56,3 +70,6 @@ INSERT INTO Dados VALUES (1, 1, 3);
 INSERT INTO Dados VALUES (1, 4, 2);
 INSERT INTO Dados VALUES (2, 3, 5);
 INSERT INTO Dados VALUES (2, 6, 6);
+
+INSERT INTO Tablero VALUES (1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 4, 4, 4, 4, 1);
+INSERT INTO Tablero VALUES (2, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 4, 4, 4, 4, 1);
